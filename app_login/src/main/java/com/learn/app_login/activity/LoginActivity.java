@@ -18,13 +18,14 @@ import javax.inject.Inject;
 @Route(path = RouterPath.LOGINACTIVITY)
 public class LoginActivity extends BaseActivity<LoginPresent> {
 
+    //protected String TAG=LoginActivity.class.getSimpleName();
     @Inject
     LoginPresent present;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ARouter.getInstance().inject(this);
+        ARouter.getInstance().build(RouterPath.MAINACTIVITY).navigation();
         L.e(present.TAG);
     }
 

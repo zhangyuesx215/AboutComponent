@@ -47,17 +47,17 @@ public class L {
 
     public static void d(Object tag, Object msg) {
         if (BaseApplication.IS_DEBUG)
-            Log.i(tag + "", msg + "");
+            Log.d(tag + "", msg + "");
     }
 
     public static void e(Object tag, Object msg) {
         if (BaseApplication.IS_DEBUG)
-            Log.i(tag + "", msg + "");
+            Log.e(tag + "", msg + "");
     }
 
     public static void v(Object tag, Object msg) {
         if (BaseApplication.IS_DEBUG)
-            Log.i(tag + "", msg + "");
+            Log.v(tag + "", msg + "");
     }
 
     public static void logE(String content) {
