@@ -1,2 +1,2 @@
 # AboutComponent
-rxjava dragger2 retorfit . glide . 组件化
+rxjava dragger2 retrofit . glide . 组件化
