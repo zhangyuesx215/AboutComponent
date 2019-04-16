@@ -9,26 +9,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
-/**
- * manage loading status view<br>
- * usage:<br>
- *  //if set true, logs will print into logcat<br>
- *  Gloading.debug(trueOrFalse);<br>
- *  //init the default loading status view creator ({@link Adapter})<br>
- *  Gloading.initDefault(adapter);<br>
- *  //wrap an activity. return the holder<br>
- *  Holder holder = Gloading.getDefault().wrap(activity);<br>
- *  //wrap an activity and set retry task. return the holder<br>
- *  Holder holder = Gloading.getDefault().wrap(activity).withRetry(retryTask);<br>
- *  <br>
- *  holder.showLoading() //show loading status view by holder<br>
- *  holder.showLoadSuccess() //show load success status view by holder (frequently, hide gloading)<br>
- *  holder.showFailed() //show load failed status view by holder (frequently, needs retry task)<br>
- *  holder.showEmpty() //show empty status view by holder. (load completed, but data is empty)
- *
- * @author billy.qi
- * @since 19/3/18 17:49
- */
+
 public class Gloading {
     public static final int STATUS_LOADING = 1;
     public static final int STATUS_LOAD_SUCCESS = 2;
