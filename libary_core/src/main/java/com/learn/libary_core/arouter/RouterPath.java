@@ -1,4 +1,4 @@
-package com.learn.library_common.arouter;
+package com.learn.libary_core.arouter;
 
 public interface RouterPath {
 

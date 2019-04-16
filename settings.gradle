@@ -1,0 +1,1 @@
+include ':app', ':libary_common', ':app_login', ':app_main', ':app_person', ':libary_core'

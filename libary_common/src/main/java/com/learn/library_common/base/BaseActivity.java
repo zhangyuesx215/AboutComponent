@@ -6,13 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.learn.library_common.utils.L;
+import com.learn.library_common.view.Gloading;
 
 
 public abstract class BaseActivity<T extends BasePresent> extends AppCompatActivity {
 
     public String TAG=getClass().getSimpleName();
-
     protected T mPresenter;
+    /**
+     * 加载动画
+     */
+    protected Gloading.Holder mHolder;
 
 
     @Override
@@ -86,5 +90,42 @@ public abstract class BaseActivity<T extends BasePresent> extends AppCompatActiv
 
     public abstract  void initializeInjector();
 
+    /**
+     * make a Gloading.Holder wrap with current activity by default
+     * override this method in subclass to do special initialization
+     */
+    protected void initLoadingStatusViewIfNeed() {
+        if (mHolder == null) {
+            //bind status view to activity root view by default
+            mHolder = Gloading.getDefault().wrap(this).withRetry(new Runnable() {
+                @Override
+                public void run() {
+                    onLoadRetry();
+                }
+            });
+        }
+    }
+    protected void onLoadRetry() {
+        // override this method in subclass to do retry task
 
+    }
+    public void showLoading() {
+        initLoadingStatusViewIfNeed();
+        mHolder.showLoading();
+    }
+
+    public void showLoadSuccess() {
+        initLoadingStatusViewIfNeed();
+        mHolder.showLoadSuccess();
+    }
+
+    public void showLoadFailed() {
+        initLoadingStatusViewIfNeed();
+        mHolder.showLoadFailed();
+    }
+
+    public void showEmpty() {
+        initLoadingStatusViewIfNeed();
+        mHolder.showEmpty();
+    }
 }

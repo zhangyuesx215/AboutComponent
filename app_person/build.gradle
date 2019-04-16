@@ -60,4 +60,5 @@ dependencies {
     api rootProject.ext.dependencies.arouter_api
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    implementation project(path: ':libary_core')
 }
