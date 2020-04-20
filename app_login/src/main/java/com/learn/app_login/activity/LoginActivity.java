@@ -2,6 +2,7 @@ package com.learn.app_login.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.RelativeLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.learn.app_login.R;
@@ -20,11 +21,16 @@ public class LoginActivity extends BaseActivity<LoginPresent> {
     @Inject
     LoginPresent present;
 
+    private RelativeLayout rl;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showLoading();
+        //showLoading();
         L.e(present.TAG);
+        rl=findViewById(R.id.rl);
+        showLoading(rl);
     }
 
     @Override

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
@@ -24,6 +25,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 
 }
 
@@ -48,4 +56,6 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
     //java注解
     api  rootProject.ext.dependencies.annotation
+//    api rootProject.ext.dependencies.butternife
+//    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
 }

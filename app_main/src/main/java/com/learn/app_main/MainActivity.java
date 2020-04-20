@@ -1,7 +1,7 @@
 package com.learn.app_main;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.learn.library_common.arouter.RouterPath;
+import com.learn.libary_core.arouter.RouterPath;
 import com.learn.library_common.base.BaseActivity;
 
 @Route(path = RouterPath.MAINACTIVITY)

@@ -3,6 +3,7 @@ if (rootProject.ext.isApplication){
 }else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -47,6 +48,13 @@ android {
             }
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 
 }
 
@@ -60,5 +68,5 @@ dependencies {
     api rootProject.ext.dependencies.arouter_api
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-    implementation project(':libary_core')
+    implementation project(path: ':libary_core')
 }
